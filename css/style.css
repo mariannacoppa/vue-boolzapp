@@ -13,18 +13,30 @@
 nav {
     height: 60px;
     width: 100%;
-    border-right: 1px solid gray;
+    border-right: 1px solid lightgray;
     background-color: #E9E9E9;
+}
+.messages-field {
+    height: calc(100% - 120px);
+    background-image: url(../img/mine.jpg);
+}
+.message-line {
+    width: 100%;
+}
+.message-sent {
+    background-color: #D4F8BA;
+}
+.message-received, .box-left {
+    background-color: white;
 }
 img {
     height: 50px;
 }
-.box-left, .box-right {
-    overflow-y: auto;
-}
 .box-left {
     width: calc((100% / 12) * 4);
-    background-color: white;
+}
+.contacts {
+    height: 525px;
 }
 .box-right {
     width: calc((100% / 12) * 8);
@@ -32,7 +44,6 @@ img {
 .content-app {
     display: flex;
     height: 700px;
-    border: 1px solid black;
 }
 a, .hour, .last-sent {
     font-size: 10px;
