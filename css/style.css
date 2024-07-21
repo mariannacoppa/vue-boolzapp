@@ -3,3 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+.bg {
+    background-image: linear-gradient(#019587 100px, #DCDACD 100px, #D0DADB);
+    height: 100vh;
+}

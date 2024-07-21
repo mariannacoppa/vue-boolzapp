@@ -28,3 +28,14 @@ Milestone 4
  lista dei contatti
  ● Ipulsanti e le icone possono non funzionare (a parte l’invio del messaggio)
  ● Pergestire le date, può essere utile la libreria Luxon
+
+ Pseudocodice
+
+ 1 creazione contenuti statici
+ 2 definisco lo stile con css
+ 3 rimuovo i contenuti statici dall'html 
+ 4 inserisco nella colonna di sinistra gli oggetti contenuti nell'array delle anteprime
+ 5 inserisco nella colonna di destra la lista dei messaggi di un utente
+ 6 al click sull'anteprima, appare visibile la lista dei messaggi del relativo utente
+ 7 rendo attiva la form per l'invio dei messaggi 
+ 8 dopo 1 secondo, appare in risposta un messaggio automatico con la scritta "ok"
