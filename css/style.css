@@ -10,6 +10,9 @@
 .container {
     width: 1000px;
 }
+input {
+    border: none;
+}
 nav {
     height: 60px;
     width: 100%;
@@ -30,7 +33,7 @@ nav {
     background-color: white;
 }
 img {
-    height: 50px;
+    height: 40px;
 }
 .box-left {
     width: calc((100% / 12) * 4);
