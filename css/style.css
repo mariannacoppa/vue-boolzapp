@@ -4,6 +4,29 @@
     box-sizing: border-box;
 }
 .bg {
-    background-image: linear-gradient(#019587 100px, #DCDACD 100px, #D0DADB);
+    background-image: linear-gradient(#019587 100px, #DCDACD 100px, #789f9b);
     height: 100vh;
+}
+.container {
+    width: 1000px;
+}
+nav {
+    height: 50px;
+    width: 100%;
+    border-right: 1px solid gray;
+    background-color: #E9E9E9;
+}
+img {
+    height: 30px;
+}
+.box-left {
+    width: calc((100% / 12) * 4);;
+}
+.box-right {
+    width: calc((100% / 12) * 8);
+}
+.content-app {
+    display: flex;
+    height: 700px;
+    border: 1px solid black;
 }
