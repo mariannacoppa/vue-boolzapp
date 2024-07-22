@@ -41,17 +41,17 @@
                                                 </div>
                                                 <input type="text" class="search w-100" placeholder="&#128269; Cerca o inizia una nuova chat">
                                                 <div class="contacts overflow-y-auto">
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
+                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2" v-for="(contact, index) in contacts">
                                                         <div class="user-profile d-flex">
-                                                            <img src="./img/avatar_1.jpg" alt="" class="avatar mx-2 rounded-5">
+                                                            <img :src="contacts.avatar" :alt="contacts.name" class="avatar mx-2 rounded-5">
                                                             <div class="name-last">
-                                                                <div class="user-name">Michele</div>
+                                                                <div class="user-name">{{ contact.name }}</div>
                                                                 <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
                                                             </div>
                                                         </div>
                                                         <div class="hour text-secondary">12:00</div>
                                                     </div>
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
+                                                    <!-- <div class="item user-preview d-flex align-items-center justify-content-between p-2">
                                                         <div class="user-profile d-flex">
                                                             <img src="./img/avatar_2.jpg" alt="" class="avatar mx-2 rounded-5">
                                                             <div class="name-last">
@@ -120,7 +120,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="hour text-secondary">12:00</div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </section>
                                         </div>
