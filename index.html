@@ -144,7 +144,7 @@
                                             <div class="messages-field overflow-y-auto">
                                                 <div class="message-line d-flex justify-content-end" 
                                                 v-for="(itemMessage, index) in contacts[active_contact].messages">
-                                                    <div class="sent">
+                                                    <div v-bind:class="itemMessage.status">
                                                         <div class="message-text">
                                                             {{ itemMessage.message }}
                                                         </div>
