@@ -142,10 +142,10 @@
                                                 </div>
                                             </nav>
                                             <div class="messages-field overflow-y-auto">
-                                                <div class="message-line d-flex justify-content-end">
+                                                <div class="message-line d-flex justify-content-end" v-for="(message, index) in contacts[active_contact].messages">
                                                     <div class="message-sent d-flex rounded-2 p-2 my-2 mx-4">
                                                         <div class="message-text">
-                                                            {{ contacts[active_contact].messages }}
+                                                            {{ message }}
                                                         </div>
                                                         <div class="hour mt-3 ms-2">11:30</div>
                                                     </div>
