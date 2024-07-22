@@ -26,10 +26,20 @@ nav {
 .message-line {
     width: 100%;
 }
-.message-sent {
+.sent {
     background-color: #D4F8BA;
+    display: flex;
+    border-radius: 30px;
+    padding: 5px;
+    margin-right: 20px;
 }
-.message-received, .box-left {
+.received {
+    display: flex;
+    border-radius: 30px;
+    padding: 5px;
+    margin-left: 20px;
+}
+.received, .box-left {
     background-color: white;
 }
 img {
