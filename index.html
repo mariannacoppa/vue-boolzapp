@@ -142,16 +142,17 @@
                                                 </div>
                                             </nav>
                                             <div class="messages-field overflow-y-auto">
-                                                <div class="message-line d-flex justify-content-end" v-for="(itemMessage, index) in contacts[active_contact].messages">
-                                                    <div class="sent d-flex rounded-2 p-2 my-2 mx-4">
+                                                <div class="message-line d-flex justify-content-end" 
+                                                v-for="(itemMessage, index) in contacts[active_contact].messages">
+                                                    <div class="sent">
                                                         <div class="message-text">
                                                             {{ itemMessage.message }}
                                                         </div>
-                                                        <div class="hour mt-3 ms-2">11:30</div>
+                                                        <div class="hour mt-3 ms-2">{{ itemMessage.date }}</div>
                                                     </div>
                                                 </div>
                                                 <!-- <div class="message-line d-flex justify-content-end">
-                                                    <div class="sent d-flex rounded-2 p-2 my-2 mx-4">
+                                                    <div class="sent">
                                                         <div class="message-text">
                                                             Ricordati di stendere i panni
                                                         </div>
@@ -159,7 +160,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="message-line d-flex justify-content-start">
-                                                    <div class="received d-flex rounded-2 p-2 my-2 mx-4">
+                                                    <div class="received">
                                                         <div class="message-text">
                                                             Tutto Fatto!
                                                         </div>
