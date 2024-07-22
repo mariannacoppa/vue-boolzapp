@@ -41,7 +41,8 @@
                                                 </div>
                                                 <input type="text" class="search w-100" placeholder="&#128269; Cerca o inizia una nuova chat">
                                                 <div class="contacts overflow-y-auto">
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2" v-for="(contact, index) in contacts">
+                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2" 
+                                                    v-for="(contact, index) in contacts" @click="setPreviewActive(index)">
                                                         <div class="user-profile d-flex">
                                                             <img :src="contact.avatar" :alt="contact.name" 
                                                             class="avatar mx-2 rounded-5">

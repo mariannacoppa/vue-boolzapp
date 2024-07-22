@@ -164,6 +164,8 @@ createApp({
         }
     },
     methods: {
-        
+        setPreviewActive(index) {
+            this.active_contact = index;
+        }
     }
 }).mount('#app');
