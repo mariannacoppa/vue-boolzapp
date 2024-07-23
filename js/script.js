@@ -3,6 +3,7 @@ createApp({
     data() {
         return {
             active_contact: 0,
+            message: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -21,7 +22,7 @@ createApp({
                         },
                         {
                             date: '10/01/2020 16:15:22',
-                            message: 'Tutto  fatto!',
+                            message: 'Tutto fatto!',
                             status: 'received'
                         }
                     ]
@@ -166,6 +167,19 @@ createApp({
     methods: {
         setPreviewActive(index) {
             this.active_contact = index;
-        }
+        },
+        // addMessage() {
+        //     if (this[active_contact].message != '' && this[active_contact].message != null) {
+        //         let object = {
+        //             [active_contact].message: this[active_contact].message,
+        //             status: 'sent'
+        //         }
+        //         this.contacts.push(object);
+        //         this[active_contact].message = null;
+        //     }
+        //     else {
+        //         alert('Non hai digitato nessun messaggio');
+        //     }
+        // }
     }
 }).mount('#app');

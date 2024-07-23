@@ -142,16 +142,16 @@
                                                 </div>
                                             </nav>
                                             <div class="messages-field overflow-y-auto">
-                                                <div class="message-line d-flex justify-content-end" 
+                                                <div class="message-line" 
                                                 v-for="(itemMessage, index) in contacts[active_contact].messages">
                                                     <div v-bind:class="itemMessage.status">
                                                         <div class="message-text">
                                                             {{ itemMessage.message }}
                                                         </div>
-                                                        <div class="hour mt-3 ms-2">{{ itemMessage.date }}</div>
+                                                        <div class="hour mt-3 ms-2">{{ itemMessage.date.split(' ')[1] }}</div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="message-line d-flex justify-content-end">
+                                                <!-- <div class="message-line">
                                                     <div class="sent">
                                                         <div class="message-text">
                                                             Ricordati di stendere i panni
@@ -159,7 +159,7 @@
                                                         <div class="hour mt-3 ms-2">11:30</div>
                                                     </div>
                                                 </div>
-                                                <div class="message-line d-flex justify-content-start">
+                                                <div class="message-line">
                                                     <div class="received">
                                                         <div class="message-text">
                                                             Tutto Fatto!

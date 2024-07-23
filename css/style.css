@@ -26,20 +26,21 @@ nav {
 .message-line {
     width: 100%;
 }
-.sent {
-    background-color: #D4F8BA;
+.sent, .received {
     display: flex;
     border-radius: 10px;
     padding: 5px;
-    margin-right: 30px;
     margin-top: 10px;
 }
+.sent {
+    background-color: #D4F8BA;
+    justify-content: end;
+    margin-right: 30px;
+    margin-left: auto;
+}
 .received {
-    display: flex;
-    border-radius: 10px;
-    padding: 5px;
+    justify-content: start;
     margin-left: 30px;
-    margin-top: 10px;
 }
 .received, .box-left {
     background-color: white;
