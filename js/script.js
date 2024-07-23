@@ -8,6 +8,7 @@ createApp({
                 message: null,
                 status: null
             },
+            search: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -203,6 +204,9 @@ createApp({
                }
                this.contacts[active_contact].messages.push(itemMessageCopy);
            }, 1000);
+       },
+       filterContacts() {
+            console.log(this.search);
        }
     }
 }).mount('#app');
