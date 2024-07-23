@@ -168,6 +168,9 @@ createApp({
             ]
         }
     },
+    // created() {
+    //     this.receivedOk(active_contact);
+    // },
     methods: {
         setPreviewActive(index) {
             this.active_contact = index;
@@ -190,6 +193,7 @@ createApp({
             else {
                 alert('Non hai digitato nessun messaggio');
             }
-        }
+        },
+        
     }
 }).mount('#app');

@@ -112,7 +112,9 @@
                                             <nav class="bg-tertiary d-flex align-items-center justify-content-around">
                                                 <i class="fa-regular fa-face-smile"></i>
                                                 <input type="text" class="w-75" placeholder="Scrivi un messaggio"
-                                                v-model="itemMessage.message" @keyup.enter="addItemMessage(active_contact)">
+                                                v-model="itemMessage.message" 
+                                                @keydown.enter="addItemMessage(active_contact)" 
+                                                @keyup.enter="receivedOk(active_contact)">
                                                 <i class="fa-solid fa-microphone"></i>
                                             </nav>
                                         </div>
