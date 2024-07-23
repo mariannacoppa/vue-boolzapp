@@ -194,6 +194,18 @@ createApp({
                 alert('Non hai digitato nessun messaggio');
             }
         },
-        
+        receivedOk(active_contact) {
+            let receivedOk = setTimeout(() => {
+               const d = new Date();
+               let h = d.getHours();
+               let m = d.getMinutes();
+               let itemMessageCopy = {
+                   date: h + ':' + m,
+                   status: 'received',
+                   message: 'Ok'
+               }
+               this.contacts[active_contact].messages.push(itemMessageCopy);
+           }, 1000);
+       }
     }
 }).mount('#app');
