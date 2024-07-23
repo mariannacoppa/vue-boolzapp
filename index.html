@@ -84,11 +84,12 @@
                                             <div class="messages-field overflow-y-auto">
                                                 <div class="message-line" 
                                                 v-for="(itemMessage, index) in contacts[active_contact].messages">
+                                                {{ itemMessage }}
                                                     <div v-bind:class="itemMessage.status">
                                                         <div class="message-text">
                                                             {{ itemMessage.message }}
                                                         </div>
-                                                        <div class="hour mt-3 ms-2">{{ itemMessage.date.split(' ')[1].slice(0, 5) }}</div>
+                                                        <div class="hour mt-3 ms-2">{{ itemMessage.date }}</div>
                                                     </div>
                                                 </div>
                                                 <!-- <div class="message-line">
@@ -111,7 +112,7 @@
                                             <nav class="bg-tertiary d-flex align-items-center justify-content-around">
                                                 <i class="fa-regular fa-face-smile"></i>
                                                 <input type="text" class="w-75" placeholder="Scrivi un messaggio"
-                                                v-model="itemMessage" @keyup.enter="addItemMessage(active_contact)">
+                                                v-model="itemMessage.message" @keyup.enter="addItemMessage(active_contact)">
                                                 <i class="fa-solid fa-microphone"></i>
                                             </nav>
                                         </div>

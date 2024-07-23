@@ -3,7 +3,11 @@ createApp({
     data() {
         return {
             active_contact: 0,
-            itemMmessage: null,
+            itemMessage: {
+                date: null,
+                message: null,
+                status: null
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -169,12 +173,16 @@ createApp({
             this.active_contact = index;
         },
         addItemMessage(active_contact) {
+            console.log(this.itemMessage);
             if (this.itemMessage.message != '' && this.itemMessage.message != null) {
-                let object = {
-                    message: this[itemMessage].message,
-                    status: 'sent'
+                // this.itemMessage.date = Date();
+                // this.itemMessage.status = 'sent';
+                let itemMessageCopy = {
+                    date: new Date(),
+                    status: 'sent',
+                    message: this.itemMessage.message
                 }
-                this.active_contact.push(object);
+                this.contacts[active_contact].messages.push(itemMessageCopy);
                 this.itemMessage.message = null;
             }
             else {
