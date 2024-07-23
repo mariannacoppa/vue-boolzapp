@@ -8,7 +8,7 @@ createApp({
                 message: null,
                 status: null
             },
-            search: null,
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -207,6 +207,18 @@ createApp({
        },
        filterContacts() {
             console.log(this.search);
+            if (this.search != '') {
+                this.contacts.forEach((contact) => {
+                    if (!contact.name.includes(this.search)) {
+                        contact.visible = false;
+                    }
+                });
+            }
+            else {
+                this.contacts.forEach((contact) => {
+                        contact.visible = false;
+                });
+            }
        }
     }
 }).mount('#app');
