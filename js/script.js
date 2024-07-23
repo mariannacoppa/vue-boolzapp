@@ -3,7 +3,7 @@ createApp({
     data() {
         return {
             active_contact: 0,
-            message: null,
+            itemMmessage: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -168,18 +168,18 @@ createApp({
         setPreviewActive(index) {
             this.active_contact = index;
         },
-        // addMessage() {
-        //     if (this[active_contact].message != '' && this[active_contact].message != null) {
-        //         let object = {
-        //             [active_contact].message: this[active_contact].message,
-        //             status: 'sent'
-        //         }
-        //         this.contacts.push(object);
-        //         this[active_contact].message = null;
-        //     }
-        //     else {
-        //         alert('Non hai digitato nessun messaggio');
-        //     }
-        // }
+        addItemMessage(active_contact) {
+            if (this.itemMessage.message != '' && this.itemMessage.message != null) {
+                let object = {
+                    message: this[itemMessage].message,
+                    status: 'sent'
+                }
+                this.active_contact.push(object);
+                this.itemMessage.message = null;
+            }
+            else {
+                alert('Non hai digitato nessun messaggio');
+            }
+        }
     }
 }).mount('#app');

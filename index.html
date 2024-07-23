@@ -62,66 +62,6 @@
                                                             </div>
                                                         </div>
                                                         <div class="hour text-secondary">12:00</div>
-                                                    </div>
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
-                                                        <div class="user-profile d-flex">
-                                                            <img src="./img/avatar_3.jpg" alt="" class="avatar mx-2 rounded-5">
-                                                            <div class="name-last">
-                                                                <div class="user-name">Samuele</div>
-                                                                <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hour text-secondary">12:00</div>
-                                                    </div>
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
-                                                        <div class="user-profile d-flex">
-                                                            <img src="./img/avatar_4.jpg" alt="" class="avatar mx-2 rounded-5">
-                                                            <div class="name-last">
-                                                                <div class="user-name">Alessandro B.</div>
-                                                                <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hour text-secondary">12:00</div>
-                                                    </div>
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
-                                                        <div class="user-profile d-flex">
-                                                            <img src="./img/avatar_5.jpg" alt="" class="avatar mx-2 rounded-5">
-                                                            <div class="name-last">
-                                                                <div class="user-name">Alessandro L.</div>
-                                                                <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hour text-secondary">12:00</div>
-                                                    </div>
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
-                                                        <div class="user-profile d-flex">
-                                                            <img src="./img/avatar_6.jpg" alt="" class="avatar mx-2 rounded-5">
-                                                            <div class="name-last">
-                                                                <div class="user-name">Claudia</div>
-                                                                <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hour text-secondary">12:00</div>
-                                                    </div>
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
-                                                        <div class="user-profile d-flex">
-                                                            <img src="./img/avatar_7.jpg" alt="" class="avatar mx-2 rounded-5">
-                                                            <div class="name-last">
-                                                                <div class="user-name">Federico</div>
-                                                                <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hour text-secondary">12:00</div>
-                                                    </div>
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2">
-                                                        <div class="user-profile d-flex">
-                                                            <img src="./img/avatar_8.jpg" alt="" class="avatar mx-2 rounded-5">
-                                                            <div class="name-last">
-                                                                <div class="user-name">Davide</div>
-                                                                <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="hour text-secondary">12:00</div>
                                                     </div> -->
                                                 </div>
                                             </section>
@@ -170,13 +110,13 @@
                                             </div>
                                             <nav class="bg-tertiary d-flex align-items-center justify-content-around">
                                                 <i class="fa-regular fa-face-smile"></i>
-                                                <input type="text" class="w-75" placeholder="Scrivi un messaggio">
+                                                <input type="text" class="w-75" placeholder="Scrivi un messaggio"
+                                                v-model="itemMessage" @keyup.enter="addItemMessage(active_contact)">
                                                 <i class="fa-solid fa-microphone"></i>
                                             </nav>
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
