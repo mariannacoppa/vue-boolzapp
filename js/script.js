@@ -176,9 +176,11 @@ createApp({
             console.log(this.itemMessage);
             if (this.itemMessage.message != '' && this.itemMessage.message != null) {
                 // this.itemMessage.date = Date();
-                // this.itemMessage.status = 'sent';
+                const d = new Date();
+                let h = d.getHours();
+                let m = d.getMinutes();
                 let itemMessageCopy = {
-                    date: new Date(),
+                    date: h + ':' + m,
                     status: 'sent',
                     message: this.itemMessage.message
                 }
