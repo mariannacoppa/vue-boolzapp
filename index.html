@@ -39,7 +39,7 @@
                                                         <a href="">Attiva notifiche desktop</a>
                                                     </div>
                                                 </div>
-                                                <input type="text" class="search w-100" placeholder="&#128269; Cerca o inizia una nuova chat">
+                                                <input type="text" class="search w-100" placeholder="&#128269; cerca una chat" @keyup="filterContacts">
                                                 <div class="contacts overflow-y-auto">
                                                     <div class="item user-preview d-flex align-items-center justify-content-between p-2" 
                                                     v-for="(contact, index) in contacts" @click="setPreviewActive(index)">
