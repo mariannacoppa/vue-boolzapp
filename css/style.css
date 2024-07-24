@@ -25,6 +25,7 @@ nav {
 }
 .message-line {
     width: 100%;
+    display: flex;
 }
 .sent, .received {
     display: flex;

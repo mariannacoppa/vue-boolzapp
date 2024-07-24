@@ -39,10 +39,11 @@
                                                         <a href="">Attiva notifiche desktop</a>
                                                     </div>
                                                 </div>
-                                                <input type="text" class="search w-100" placeholder="&#128269; cerca una chat" @keyup="filterContacts" v-model="search">
+                                                <input type="text" class="search w-100" placeholder="&#128269; cerca una chat" 
+                                                @keyup="filterContacts" v-model="search">
                                                 <div class="contacts overflow-y-auto">
-                                                    <div class="item user-preview d-flex align-items-center justify-content-between p-2" 
-                                                    v-for="(contact, index) in contacts" :class="index == active_contact ? 'active' : ''" @click="setPreviewActive(index)" v-show="visible">
+                                                    <div class="item user-preview align-items-center justify-content-between p-2" 
+                                                    v-for="(contact, index) in contacts" :class="index == active_contact ? 'active' : ''" @click="setPreviewActive(index)" v-show="contact.visible">
                                                         <div class="user-profile d-flex">
                                                             <img :src="contact.avatar" :alt="contact.name" 
                                                             class="avatar mx-2 rounded-5">
@@ -84,12 +85,11 @@
                                             <div class="messages-field overflow-y-auto">
                                                 <div class="message-line" 
                                                 v-for="(itemMessage, index) in contacts[active_contact].messages">
-                                                <!-- {{ itemMessage }} -->
                                                     <div v-bind:class="itemMessage.status">
                                                         <div class="message-text">
                                                             {{ itemMessage.message }}
                                                         </div>
-                                                        <div class="hour mt-3 ms-2">{{ itemMessage.date.slice(11, 16) }}</div>
+                                                        <div class="hour mt-3 ms-2">{{ itemMessage.date }}</div>
                                                     </div>
                                                 </div>
                                                 <!-- <div class="message-line">

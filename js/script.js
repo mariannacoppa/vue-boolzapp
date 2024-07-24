@@ -10,7 +10,6 @@ createApp({
             },
             search: '',
             name: '',
-            visible: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -204,13 +203,25 @@ createApp({
                this.contacts[active_contact].messages.push(itemMessageCopy);
            }, 1000);
        },
+    //    shortenDate() {
+
+    //    },
        filterContacts() {
-            // console.log(this.search);
+            console.log(this.search);
+            console.log(this.contacts);
+            // controllo il campo input: se il campo è diverso da stringa vuota
             if (this.search != '') {
+                // ciclo tutti i contact
                 this.contacts.forEach((contact) => {
+                    // se il contenuto del search non è contenuto all'interno del nome del contact
                     if (!contact.name.toLowerCase().includes(this.search.toLowerCase())) {
+                        // nascondo i contact
                         contact.visible = false;
-                        console.log('non c\è');
+                        console.log('non c\'è');
+                    }
+                    else {
+                        contact.visible = true;
+                        console.log('c\'è'); 
                     }
                 });
             }
