@@ -178,12 +178,9 @@ createApp({
         addItemMessage(active_contact) {
             console.log(this.itemMessage);
             if (this.itemMessage.message != '' && this.itemMessage.message != null) {
-                // this.itemMessage.date = Date();
-                const d = new Date();
-                let h = d.getHours();
-                let m = d.getMinutes();
+                const d = Date().slice(16, 21);
                 let itemMessageCopy = {
-                    date: h + ':' + m,
+                    date: d,
                     status: 'sent',
                     message: this.itemMessage.message
                 }
