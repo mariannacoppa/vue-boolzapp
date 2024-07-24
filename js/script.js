@@ -177,7 +177,7 @@ createApp({
         addItemMessage(active_contact) {
             console.log(this.itemMessage);
             if (this.itemMessage.message != '' && this.itemMessage.message != null) {
-                const d = Date().slice(16, 21);
+                const d = Date();//.slice(16, 21);
                 let itemMessageCopy = {
                     date: d,
                     status: 'sent',
@@ -193,44 +193,47 @@ createApp({
         receivedOk(active_contact) {
             let receivedOk = setTimeout(() => {
                const d = new Date();
-               let h = d.getHours();
-               let m = d.getMinutes();
+            //    let h = d.getHours();
+            //    let m = d.getMinutes();
                let itemMessageCopy = {
-                   date: h + ':' + m,
+                   date: d, //h + ':' + m,
                    status: 'received',
                    message: 'Ok'
                }
                this.contacts[active_contact].messages.push(itemMessageCopy);
            }, 1000);
-       },
-    //    shortenDate() {
-
-    //    },
-       filterContacts() {
-            console.log(this.search);
-            console.log(this.contacts);
-            // controllo il campo input: se il campo è diverso da stringa vuota
-            if (this.search != '') {
-                // ciclo tutti i contact
-                this.contacts.forEach((contact) => {
-                    // se il contenuto del search non è contenuto all'interno del nome del contact
-                    if (!contact.name.toLowerCase().includes(this.search.toLowerCase())) {
-                        // nascondo i contact
-                        contact.visible = false;
-                        console.log('non c\'è');
-                    }
-                    else {
+        },
+        formatDateToTime(dateString) {
+            let newDate = Date.parse(dateString);
+            newDate = new Date(newDate).toString();
+            newDate = newDate.slice(16, 21);
+            return newDate;
+        },
+        filterContacts() {
+                console.log(this.search);
+                console.log(this.contacts);
+                // controllo il campo input: se il campo è diverso da stringa vuota
+                if (this.search != '') {
+                    // ciclo tutti i contact
+                    this.contacts.forEach((contact) => {
+                        // se il contenuto del search non è contenuto all'interno del nome del contact
+                        if (!contact.name.toLowerCase().includes(this.search.toLowerCase())) {
+                            // nascondo i contact
+                            contact.visible = false;
+                            console.log('non c\'è');
+                        }
+                        else {
+                            contact.visible = true;
+                            console.log('c\'è'); 
+                        }
+                    });
+                }
+                else {
+                    this.contacts.forEach((contact) => {
                         contact.visible = true;
                         console.log('c\'è'); 
-                    }
-                });
-            }
-            else {
-                this.contacts.forEach((contact) => {
-                    contact.visible = true;
-                    console.log('c\'è'); 
-                });
-            }
-       }
+                    });
+                }
+        }
     }
 }).mount('#app');
