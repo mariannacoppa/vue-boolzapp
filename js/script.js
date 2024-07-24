@@ -9,6 +9,8 @@ createApp({
                 status: null
             },
             search: '',
+            name: '',
+            visible: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -206,17 +208,19 @@ createApp({
            }, 1000);
        },
        filterContacts() {
-            console.log(this.search);
+            // console.log(this.search);
             if (this.search != '') {
                 this.contacts.forEach((contact) => {
-                    if (!contact.name.includes(this.search)) {
+                    if (!contact.name.toLowerCase().includes(this.search.toLowerCase())) {
                         contact.visible = false;
+                        console.log('non c\è');
                     }
                 });
             }
             else {
                 this.contacts.forEach((contact) => {
-                        contact.visible = false;
+                    contact.visible = true;
+                    console.log('c\'è'); 
                 });
             }
        }

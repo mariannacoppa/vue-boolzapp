@@ -70,3 +70,7 @@ a, .hour, .last-sent {
 .user-preview {
     border-bottom: 1px solid gray;
 }
+.active {
+    background-color: #0195866e;
+    transition: 0.5s;
+}
