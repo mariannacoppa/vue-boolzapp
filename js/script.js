@@ -63,7 +63,7 @@ createApp({
                         {
                             date: '28/03/2020 10:10:40',
                             message: 'La Marianna va in campagna',
-                            status: 'received' 
+                            status: 'received'
                         },
                         {
                             date: '28/03/2020 10:20:10',
@@ -190,18 +190,17 @@ createApp({
                 alert('Non hai digitato nessun messaggio');
             }
         },
+        // ricevo messaggio automatico in chat
         receivedOk(active_contact) {
             let receivedOk = setTimeout(() => {
-               const d = new Date();
-            //    let h = d.getHours();
-            //    let m = d.getMinutes();
-               let itemMessageCopy = {
-                   date: d, //h + ':' + m,
-                   status: 'received',
-                   message: 'Ok'
-               }
-               this.contacts[active_contact].messages.push(itemMessageCopy);
-           }, 1000);
+                const d = new Date();
+                let itemMessageCopy = {
+                    date: d,
+                    status: 'received',
+                    message: 'Ok'
+                }
+                this.contacts[active_contact].messages.push(itemMessageCopy);
+            }, 1000);
         },
         formatDateToTime(dateString) {
             let newDate = Date.parse(dateString);
@@ -210,30 +209,21 @@ createApp({
             return newDate;
         },
         filterContacts() {
-                console.log(this.search);
-                console.log(this.contacts);
-                // controllo il campo input: se il campo è diverso da stringa vuota
-                if (this.search != '') {
-                    // ciclo tutti i contact
-                    this.contacts.forEach((contact) => {
-                        // se il contenuto del search non è contenuto all'interno del nome del contact
-                        if (!contact.name.toLowerCase().includes(this.search.toLowerCase())) {
-                            // nascondo i contact
-                            contact.visible = false;
-                            console.log('non c\'è');
-                        }
-                        else {
-                            contact.visible = true;
-                            console.log('c\'è'); 
-                        }
-                    });
-                }
-                else {
-                    this.contacts.forEach((contact) => {
-                        contact.visible = true;
-                        console.log('c\'è'); 
-                    });
-                }
+            console.log(this.search);
+            console.log(this.contacts);
+            // controllo il campo input: se il campo è diverso da stringa vuota
+            if (this.search === '') {
+                this.contacts.forEach((contact) => {
+                    contact.visible = true;
+                    console.log('c\'è');
+                });
+                return
+            }
+            // ciclo tutti i contact
+            this.contacts.forEach((contact) => {
+                // se il contenuto del search non è contenuto all'interno del nome del contact
+                contact.visible = contact.name.toLowerCase().includes(this.search.toLowerCase())
+            });
         }
     }
 }).mount('#app');
