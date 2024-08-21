@@ -177,7 +177,7 @@ createApp({
         addItemMessage(active_contact) {
             console.log(this.itemMessage);
             if (this.itemMessage.message != '' && this.itemMessage.message != null) {
-                const d = Date();//.slice(16, 21);
+                const d = Date();
                 let itemMessageCopy = {
                     date: d,
                     status: 'sent',
@@ -193,7 +193,7 @@ createApp({
         // ricevo messaggio automatico in chat
         receivedOk(active_contact) {
             let receivedOk = setTimeout(() => {
-                const d = new Date();
+                const d = Date();
                 let itemMessageCopy = {
                     date: d,
                     status: 'received',
@@ -203,6 +203,7 @@ createApp({
             }, 1000);
         },
         formatDateToTime(dateString) {
+            // let newDate = itemMessage.date.split(' ')[1].slice(0, 5);
             let newDate = Date.parse(dateString);
             newDate = new Date(newDate).toString();
             newDate = newDate.slice(16, 21);
@@ -221,9 +222,13 @@ createApp({
             }
             // ciclo tutti i contact
             this.contacts.forEach((contact) => {
-                // se il contenuto del search non è contenuto all'interno del nome del contact
+                // se il contenuto del search non è contenuto all'interno del nome del contact, nascondo il contact
                 contact.visible = contact.name.toLowerCase().includes(this.search.toLowerCase())
             });
-        }
+        },
+        // findLastMessage() {
+        //     let lastMessage = contacts[contact].messages[0].message;
+        //     console.log(lastMessage);
+        // }
     }
 }).mount('#app');

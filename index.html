@@ -56,10 +56,9 @@
                                                             <div class="name-last">
                                                                 <div class="user-name">{{ contact.name }}</div>
                                                                 <div class="last-sent text-secondary">Ultimo messaggio inviato</div>
+                                                                <!-- <div class="last-sent text-secondary">{{ findLastMessage(lastMessage) }}</div> -->
                                                             </div>
-                                                       
-                                                        </div>
-                                                        
+                                                        </div>  
                                                         <div class="hour text-secondary text-end">12:00</div>
                                                     </div>
                                                     <!-- <div class="item user-preview d-flex align-items-center justify-content-between p-2">
@@ -97,7 +96,8 @@
                                                         <div class="message-text">
                                                             {{ itemMessage.message }}
                                                         </div>
-                                                        <div class="hour mt-3 ms-2">{{ formatDateToTime(itemMessage.date) }}</div>
+                                                        <div class="hour mt-3 ms-2" v-if="itemMessage.date != '' || itemMessage.date != null">{{ itemMessage.date.split(' ')[1].slice(0, 5) }}</div>
+                                                        <div class="hour mt-3 ms-2" v-else>{{ formatDateToTime(itemMessage.date) }}</div>
                                                     </div>
                                                 </div>
                                                 <!-- <div class="message-line">
